@@ -208,3 +208,21 @@ print("pronic numbers between 1 to 100 : ")
 for i in range(1,101):
     if is_pronic_number(i):
         print(i,end="|")    
+
+#sum of cube of fisrt n natural numbers
+def sum_of_cube_of_n_natural_numbers(n):
+    if n<=0:
+        return 0
+    else:
+        total = sum(i**3 for i in range(1,n+1))
+        return total
+n = int(input("enter the number"))
+if n < 0:
+    print("please enter positive integer")
+else:
+    result = sum_of_cube_of_n_natural_numbers(n)
+    print("the sum of n natural numbers is:",result)        
+
+
+
+
