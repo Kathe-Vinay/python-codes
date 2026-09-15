@@ -134,4 +134,77 @@ def compute_hcf(x,y):
     return hcf
 num1 = int(input("enter the 1st number:"))
 num2 = int(input("enter the 2nd number"))
-print("hcf of given 2 numbers is",compute_hcf(num1,num2))        
+print("hcf of given 2 numbers is",compute_hcf(num1,num2))       
+
+
+#disarium number
+def is_disarium(number):
+
+    num_str = str(number)
+
+    digit_sum = sum(int(i)**(index+1) for index, i in enumerate(num_str))
+
+    return digit_sum == number
+
+num = int(input("enter a number"))
+
+if is_disarium(num):
+    print ("is disarium")
+else:
+    print ("not disarium")    
+
+#printing diarium numbers in given range
+def is_disarium(number):
+
+    num_str = str(number)
+
+    digit_sum = sum(int(i)**(index+1) for index , i in enumerate(num_str))
+
+    return digit_sum==number
+disarium = [num for num in range(1,101) if is_disarium(num)]
+print("Disarium numbers are :")
+for num in disarium:
+    print(num, end="|")
+
+
+
+#happy number
+def is_happy_number(num):
+    seen = set()
+    while num!=1 and num not in seen:
+        seen.add(num)
+        num = sum(int(i)**2 for i in str(num))
+    return num ==1
+
+num = 24
+if is_happy_number(num):
+    print(num,"is happy number")
+else:
+    print("not happy number")        
+
+
+#harshad number
+def is_harshad_number(num):
+    digit_sum = sum(int(i) for i in str(num))
+
+    return num%digit_sum ==0
+
+num = int(input("enter a number"))
+
+if is_harshad_number(num):
+    print(num,"is harshad number")
+else:
+    print(num,"is not harshad number")    
+
+
+
+#pronic number
+def is_pronic_number(num):
+    for n in range(1,int(num**0.5)+1):
+        if n*(n+1)==num:
+            return True
+    return False
+print("pronic numbers between 1 to 100 : ")
+for i in range(1,101):
+    if is_pronic_number(i):
+        print(i,end="|")    
