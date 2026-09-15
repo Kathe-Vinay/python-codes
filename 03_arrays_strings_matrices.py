@@ -159,3 +159,63 @@ for char in my_str:
         no_punct = no_punct+char
 print(no_punct)
 
+
+numbers = [10,20,30,40,50]
+
+sum_of_numbers = 0
+
+for i in numbers:
+    sum_of_numbers += i
+
+print("sum of elements in list :",sum_of_numbers)    
+
+
+#product of numbers in the list
+numbers = [10,20,30,40,50]
+
+product_of_numbers = 1
+
+for i in numbers:
+    product_of_numbers*=i
+
+print("product of elements in the list",product_of_numbers)
+
+
+#finding smallest number in the list
+numbers = [10,30,45,-40,60]
+minimum_numbers =numbers[0]
+
+for i in numbers:
+    if i< minimum_numbers:
+       minimum_numbers=i
+print("the smallest number in the lists is",minimum_numbers)       
+
+#finding second largest element
+numbers = [10,60,90,159,132]
+numbers.sort(reverse=True)
+
+if len(numbers)>=2:
+    second_largest = numbers[1]
+    print("the second largest number in list", second_largest)
+else:
+    print("no second largest")    
+
+# finding n largest numbers
+def find_n_largest_elements(lst,n):
+    sorted_list = sorted(lst,reverse=True)
+
+    largest_elements = sorted_list[:n]
+
+    return largest_elements
+numbers = [30,10,20,40,50,69,300,500]
+n = int(input("enter number of elements"))
+
+result = find_n_largest_elements(numbers,n)
+
+print(f"the {n} largest elements in the list are:", result)
+
+
+
+
+
+
